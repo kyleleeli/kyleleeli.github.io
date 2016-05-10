@@ -243,6 +243,136 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/10/sublime-related-markdown-plugins/" itemprop="url">
+                  在sublime中使用markdown相关插件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-10T17:27:44+08:00" content="2016-05-10">
+              2016-05-10
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/10/sublime-related-markdown-plugins/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/10/sublime-related-markdown-plugins/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="安装Markdown-Editing和Markdown-Preview插件"><a href="#安装Markdown-Editing和Markdown-Preview插件" class="headerlink" title="安装Markdown Editing和Markdown Preview插件"></a>安装Markdown Editing和Markdown Preview插件</h3><p>按下键<code>Ctrl+Shift+p</code>调出命令面板，找到<code>Package Control: install Pakage</code>这一项。搜索markdown，找到<code>Markdown Editing</code>和<code>Markdown Preview</code>点击安装。</p>
+<h3 id="Markdown-Preview插件介绍"><a href="#Markdown-Preview插件介绍" class="headerlink" title="Markdown Preview插件介绍"></a>Markdown Preview插件介绍</h3><p>安装完插件后，我们来看一下具体的使用：</p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>Markdown Preview较常用的功能是<code>preview in browser</code>和<code>Export HTML in Sublime Text</code>，前者可以在浏览器看到预览效果，后者可将markdown保存为html文件。</p>
+<p>输入<code>Ctrl+Shift+P</code>调出命令窗口:<br><img src="/uploads/20160510-1-1.png" alt="ctrl+shift+p调出命令窗口"><br>选择<code>Preview in Browser</code>就可以在浏览器中查看html效果，当然，也可以通过设置快捷键来快速预览：<br>在Sublime中，<code>Preferences</code>-&gt;<code>Key Bindings - User</code>，输入以下内容：<br><code>{ &quot;keys&quot;: [&quot;alt+m&quot;], &quot;command&quot;: &quot;markdown_preview&quot;, &quot;args&quot;: {&quot;target&quot;: &quot;browser&quot;, &quot;parser&quot;:&quot;markdown&quot;}}</code><br>现在就可以通过快捷键<code>alt+m</code>快速预览效果了。</p>
+<h4 id="设置语法高亮和mathjax支持"><a href="#设置语法高亮和mathjax支持" class="headerlink" title="设置语法高亮和mathjax支持"></a>设置语法高亮和mathjax支持</h4><p>在<code>Preferences</code> -&gt; <code>Package Settings</code> -&gt; <code>Markdown Preview</code> -&gt; <code>Setting - User</code>中添加如下参数：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    /*</span><br><span class="line">        Enable <span class="keyword">or</span> <span class="keyword">not</span> mathjax support.</span><br><span class="line">    */</span><br><span class="line">    <span class="string">"enable_mathjax"</span>: true,</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">        Enable <span class="keyword">or</span> <span class="keyword">not</span> highlight.js support <span class="keyword">for</span> syntax highlighting.</span><br><span class="line">    */</span><br><span class="line">    <span class="string">"enable_highlight"</span>: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Markdown-Editing插件介绍"><a href="#Markdown-Editing插件介绍" class="headerlink" title="Markdown Editing插件介绍"></a>Markdown Editing插件介绍</h3><p>Markdown Editing插件安装完成后，具体的介绍可以查看github项目说明<a href="https://github.com/SublimeText-Markdown/MarkdownEditing" target="_blank" rel="external">MarkdownEditing</a>或者在Sublim通过<code>Preferences</code>-&gt;<code>Package Settings</code>-&gt;<code>Markdown Editing</code>-&gt;<code>README</code> 查看。</p>
+<p>这里挑选几个个人感觉不错的功能介绍一下：</p>
+<h4 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h4><table>
+<thead>
+<tr>
+<th>Mac</th>
+<th>Windows/Linux</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>⌘⌥B</code> <code>⌘⌥I</code></td>
+<td><code>Ctrl Shift B</code> <code>Ctrl Shift I</code></td>
+<td>将选中或未选中的文字加粗或变为斜体，或反向操作</td>
+</tr>
+<tr>
+<td><code>⌘^ 1...6</code></td>
+<td><code>Ctrl 1...6</code></td>
+<td>插入标题1 .. 标题6</td>
+</tr>
+</tbody>
+</table>
+<h4 id="code-snippet"><a href="#code-snippet" class="headerlink" title="code snippet"></a>code snippet</h4><p>输入 “mdi + tab” 会自动插入下面的图片标记<br><code>![Alt text](/path/to/img.jpg &quot;Optional title&quot;)</code></p>
+<p>输入 “mdl + tab” 会自动生成下面的链接标记<br><code>[](link)</code></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/08/use-hexo-build-github-blog/" itemprop="url">
                   使用hexo在github构建自己的博客
                 </a>
@@ -497,7 +627,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -514,7 +644,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
