@@ -243,6 +243,213 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/12/css3-learning/" itemprop="url">
+                  CSS3进阶
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-12T11:29:37+08:00" content="2016-05-12">
+              2016-05-12
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/12/css3-learning/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/12/css3-learning/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近要准备开发移动web app项目，之前一直是在做PC端的Web项目，为了在移动端有更好的体验，必须要重新学习html5和css3，写这篇文章的目的也是为了记录自己的学习历程。同时，会把自己觉得比较重要，且难以理解的知识做重点分析和示例。</p>
+<h2 id="1-从border开始（CSS边框）"><a href="#1-从border开始（CSS边框）" class="headerlink" title="1. 从border开始（CSS边框）"></a>1. 从border开始（CSS边框）</h2><h4 id="CSS3-圆角"><a href="#CSS3-圆角" class="headerlink" title="CSS3 圆角"></a>CSS3 圆角</h4><p><em>一个用于设置所有四个边框- *-半径属性的速记属性</em></p>
+<p><strong>语法</strong><br><code>border-radius: 1-4 length|% / 1-4 length|%;</code><br><em><strong>注意</strong>: 每个半径的四个值的顺序是：左上角，右上角，右下角，左下角。如果省略左下角，右上角是相同的。如果省略右下角，左上角是相同的。如果省略右上角，左上角是相同的。</em></p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>length</td>
+<td>定义弯道的形状。</td>
+</tr>
+<tr>
+<td>%</td>
+<td>使用%定义角落的形状。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>示例</strong><br>比较简单，不再详述</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">2px</span> solid;</span><br><span class="line">    <span class="attribute">border-radius</span>:<span class="number">25px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="CSS3盒阴影"><a href="#CSS3盒阴影" class="headerlink" title="CSS3盒阴影"></a>CSS3盒阴影</h4><p><strong>语法</strong><br><code>box-shadow: h-shadow v-shadow blur spread color inset;</code><br><em><strong>注意</strong>：boxShadow 属性把一个或多个下拉阴影添加到框上。该属性是一个用逗号分隔阴影的列表，每个阴影由 2-4 个长度值、一个可选的颜色值和一个可选的 inset 关键字来规定。省略长度的值是 0。</em></p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>h-shadow</td>
+<td>必需的。水平阴影的位置。允许负值</td>
+</tr>
+<tr>
+<td>v-shadow</td>
+<td>必需的。垂直阴影的位置。允许负值</td>
+</tr>
+<tr>
+<td>blur</td>
+<td>可选。模糊距离</td>
+</tr>
+<tr>
+<td>spread</td>
+<td>可选。阴影的大小</td>
+</tr>
+<tr>
+<td>color</td>
+<td>可选。阴影的颜色。在CSS颜色值寻找颜色值的完整列表</td>
+</tr>
+<tr>
+<td>inset</td>
+<td>可选。从外层的阴影（开始时）改变阴影内侧阴影</td>
+</tr>
+</tbody>
+</table>
+<p><strong>示例</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">10px</span> <span class="number">10px</span> <span class="number">5px</span> <span class="number">#888888</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="CSS3边界图片"><a href="#CSS3边界图片" class="headerlink" title="CSS3边界图片"></a>CSS3边界图片</h4><p><strong>语法</strong><br><code>border-image ： none | &lt;image&gt; [ &lt;number&gt; | &lt;percentage&gt;]{1,4} [ / &lt;border-width&gt;{1,4} ]? [ stretch | repeat | round ]{0,2}</code></p>
+<p><code>border-image: source slice width outset repeat;</code></p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>border-image-source</td>
+<td>用于指定要用于绘制边框的图像的位置</td>
+</tr>
+<tr>
+<td>border-image-slice</td>
+<td>图像边界向内偏移</td>
+</tr>
+<tr>
+<td>border-image-width</td>
+<td>图像边界的宽度</td>
+</tr>
+<tr>
+<td>border-image-outset</td>
+<td>用于指定在边框外部绘制 border-image-area 的量</td>
+</tr>
+<tr>
+<td>border-image-repeat</td>
+<td>这个例子演示了如何创建一个border-image 属性的按钮。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>其中 <code>border-image-slice</code> 是比较难理解的一个属性，我们重点分析这个属性的使用</strong><br>border-image-slice相当于剪切功能，将目标图片从<code>上、右、下、左</code>的顺序切了四刀，切的时候支持number或percentage两种方式，number就是像素数，percentage是百分比。</p>
+<p>比如，边框图片的大小是300px*240px,我们取百分比为25% 30% 15% 20%，那么它们实际对应的效果就是剪切了图片的60px 90px 36px 60px的四边大小，如图所示：<br><img src="/uploads/border-image-slice.jpg" alt="按比例切割示例图片"></p>
+<p>也可以按像素：<br><img src="/uploads/groovy-border-image-slice.png" alt=""></p>
+<p>切完之后就变成了一个九宫格，我们再来以W3C官网的图片为例：<br><img src="/uploads/border-image-jugongtu.png" alt=""><br><img src="/uploads/border-image-jugongtu-2.png" alt=""><br>切完之后，四个边角的图片是保持现状不变，不能应用round（平铺）、repeat（重复）、strength（拉伸）效果的（即：2，4，6，8位置的图片）。能够应用这三种效果的就是（1，3，7，9）四个位置的图片。</p>
+<p><strong>水平round效果</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.border-image</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">27px</span> solid orange;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.border-image-round</span> &#123;</span><br><span class="line">   <span class="attribute">-webkit-border-image</span>: <span class="built_in">url</span>(<span class="string">"../images/border.png"</span>) <span class="number">27</span> round stretch;</span><br><span class="line">   <span class="attribute">-moz-border-image</span>: <span class="built_in">url</span>(<span class="string">"../images/border.png"</span>) <span class="number">27</span> round stretch;</span><br><span class="line">   <span class="attribute">-o-border-image</span>: <span class="built_in">url</span>(<span class="string">"../images/border.png"</span>) <span class="number">27</span> round stretch;</span><br><span class="line">   <span class="attribute">border-image</span>: <span class="built_in">url</span>(<span class="string">"../images/border.png"</span>) <span class="number">27</span> round stretch;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/uploads/border-image-round-h.png" alt=""><br><strong>水平repeat效果</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.border-image-repeat</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-border-image</span>: <span class="built_in">url</span>(<span class="string">"../images/border.png"</span>) <span class="number">27</span> repeat stretch;</span><br><span class="line">  <span class="attribute">-moz-border-image</span>: <span class="built_in">url</span>(<span class="string">"../images/border.png"</span>) <span class="number">27</span> repeat stretch;</span><br><span class="line">  <span class="attribute">-o-border-image</span>: <span class="built_in">url</span>(<span class="string">"../images/border.png"</span>) <span class="number">27</span> repeat stretch;</span><br><span class="line">  <span class="attribute">border-image</span>: <span class="built_in">url</span>(<span class="string">"../images/border.png"</span>) <span class="number">27</span> repeat stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/uploads/border-image-repeat-h.png" alt=""><br><strong>水平拉伸效果</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.border-image-stretch</span> &#123;</span><br><span class="line">   <span class="attribute">-webkit-border-image</span>: <span class="built_in">url</span>(<span class="string">"../images/border.png"</span>) <span class="number">27</span> stretch round;</span><br><span class="line">   <span class="attribute">-moz-border-image</span>: <span class="built_in">url</span>(<span class="string">"../images/border.png"</span>) <span class="number">27</span> stretch round;</span><br><span class="line">   <span class="attribute">-o-border-image</span>: <span class="built_in">url</span>(<span class="string">"../images/border.png"</span>) <span class="number">27</span> stretch round;</span><br><span class="line">   <span class="attribute">border-image</span>: <span class="built_in">url</span>(<span class="string">"../images/border.png"</span>) <span class="number">27</span> stretch round;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/uploads/border-image-stretch-h.png" alt=""><br>垂直方法的效果类似，不再展示。<br><strong>注意：</strong><br><em>repeat和round效果不一样，round会压缩或伸展border-image的背景图片以其刚好适应border-width的宽度，从而正好在边框区域内显示，而repeat就不一样了，他不管什么适合不适合，直接居中重复，我个人认为repeat是边框中间向两端重复。因此大家可记住了：round平铺可能会改变边框背景图片大小来适应边框宽度排列，repeat重复是不改变背景图片大小而直接从中间向两端排列。</em><br><em>另外，webkit（safari、chrome）下repeat和round效果是一样的，只有在Mozilla和Opera下有区别</em></p>
+<p><strong>应用场景</strong></p>
+<ul>
+<li>制作Button<br><img src="/uploads/border-image-demo-button.png" alt=""></li>
+<li>制作Tabs<br><img src="/uploads/border-image-demo-tabs.png" alt=""> <img src="/uploads/border-image-tab-2.png" alt=""></li>
+<li>圆角+Drop box shadow效果<br><img src="/uploads/border-image-demo-drop-boxshadow.png" alt=""></li>
+<li>相框效果<br><img src="/uploads/border-image-deom-imageframe.png" alt=""></li>
+</ul>
+<p>更多说明，请参考<a href="http://www.w3cplus.com/content/css3-border-image" target="_blank" rel="external">W3CPLUS</a>，里面写的很详细，非常感谢！</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/10/sublime-related-markdown-plugins/" itemprop="url">
                   在sublime中使用markdown相关插件
                 </a>
@@ -443,12 +650,205 @@
       
         
           
-            <h1 id="使用hexo在github构建自己的博客"><a href="#使用hexo在github构建自己的博客" class="headerlink" title="使用hexo在github构建自己的博客"></a>使用hexo在github构建自己的博客</h1><p>之前提到过使用jekyll搭建博客，并且使用boostrap-jekyll模版，但因为boostrap-jekyll项目长期未更新，已经跟不上jekyll的进度，再加上是国外作者设计的模版，跟国内大部分常见的模版还是有不小区别。<br>无意间看到一个github的博客[w4lle.github.io]，感觉风格不错，然后查看了github上的项目源码，发现只有已经生成的静态文件，并无jekyll相关脚本。于是在博客园搜了一下：zzk.cnblogs.com 搜 jekyll，看到一篇”将博客从jekyll迁移到了hexo“ <a href="http://www.cnblogs.com/jasondan/p/3499227.html，说是一个台湾小伙使用nodejs开发的，赶紧跑到官网上体验了一把，果然找到了跟之前看到的博客一样风格的模板，于是看下文档如何使用。台湾小伙果然靠谱，既懂中国国情，也能接轨国际。" target="_blank" rel="external">http://www.cnblogs.com/jasondan/p/3499227.html，说是一个台湾小伙使用nodejs开发的，赶紧跑到官网上体验了一把，果然找到了跟之前看到的博客一样风格的模板，于是看下文档如何使用。台湾小伙果然靠谱，既懂中国国情，也能接轨国际。</a></p>
+            <h1 id="使用hexo在github构建自己的博客"><a href="#使用hexo在github构建自己的博客" class="headerlink" title="使用hexo在github构建自己的博客"></a>使用hexo在github构建自己的博客</h1><p>之前提到过使用jekyll搭建博客，并且使用boostrap-jekyll模版，但因为boostrap-jekyll项目长期未更新，已经跟不上jekyll的进度，再加上是国外作者设计的模版，跟国内大部分常见的模版还是有不小区别。<br>无意间看到一个github的博客，感觉风格不错，然后查看了github上的项目源码，发现只有已经生成的静态文件，并无jekyll相关脚本。于是在博客园搜了一下：zzk.cnblogs.com 搜 jekyll，看到一篇<a href="http://www.cnblogs.com/jasondan/p/3499227.html" target="_blank" rel="external">将博客从jekyll迁移到了hexo</a>，说是一个台湾小伙使用nodejs开发的，赶紧跑到官网上体验了一把，果然找到了跟之前看到的博客一样风格的模板，看了下文档感觉上手很方便，说明文档也有中英文支持。</p>
+<h3 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h3><h4 id="1-安装好node和git-注册好github账号"><a href="#1-安装好node和git-注册好github账号" class="headerlink" title="1. 安装好node和git,注册好github账号"></a>1. 安装好node和git,注册好github账号</h4><p>具体操作此处省略，查看对应的官方网站即可</p>
+<h4 id="2-安装hexo"><a href="#2-安装hexo" class="headerlink" title="2. 安装hexo"></a>2. 安装hexo</h4><p>执行: <code>npm install -g hexo</code><br>比较耗时，常常安装了一半就卡住装不下去了,fq后就ok了…</p>
+<h4 id="3-创建hexo文件夹"><a href="#3-创建hexo文件夹" class="headerlink" title="3. 创建hexo文件夹"></a>3. 创建hexo文件夹</h4><p>自己找一个喜欢的路径,创建hexo文件夹,我的是安装在 E:\hexo 下的.<br>cmd窗口切换到对应的目录下,然后执行: <code>hexo init</code><br>也可以在 E:\hexo 下右键,选择git bash,在窗口中执行 <code>hexo init</code><br>它就自动安装了需要的文件.</p>
+<h4 id="4-安装依赖"><a href="#4-安装依赖" class="headerlink" title="4.安装依赖:"></a>4.安装依赖:</h4><p>继续执行: <code>npm install</code><br>安装好了所有的依赖</p>
+<h4 id="5-完成本地安装"><a href="#5-完成本地安装" class="headerlink" title="5.完成本地安装:"></a>5.完成本地安装:</h4><p>继续在 E:\hexo 下执行:  <code>hexo generate</code><br>继续执行: <code>hexo server</code>或<code>hexo server --watch</code><br>然后在打开浏览器 localhost:4000 ,就可以看到,本地已经安装好了.</p>
 <h3 id="部署："><a href="#部署：" class="headerlink" title="部署："></a>部署：</h3><ul>
 <li>安装 hexo-deployer-git时，必须在目标目录下（如D:\github\hexo.kyleleeli.github.io）<br>$ npm install hexo-deployer-git –save</li>
 <li>执行 hexo deploy时，需要使用 git bash，同样需要定位到目标目录下</li>
 </ul>
-<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><p><a href="http://www.cnblogs.com/liulangmao/p/4323064.html" target="_blank" rel="external">使用hexo搭建github.io博客(一)</a></p>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><ul>
+<li><a href="http://www.cnblogs.com/liulangmao/p/4323064.html" target="_blank" rel="external">使用hexo搭建github.io博客(一)</a></li>
+<li><a href="http://www.jianshu.com/p/2b9f202c13fd" target="_blank" rel="external">基于Hexo+GitHub Pages 免费搭建个人博客最强教程</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/07/use-jekyll-build-github-blog/" itemprop="url">
+                  使用jekyll在github构建自己的博客
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-07T16:49:12+08:00" content="2016-05-07">
+              2016-05-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/blog/" itemprop="url" rel="index">
+                    <span itemprop="name">blog</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/07/use-jekyll-build-github-blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/07/use-jekyll-build-github-blog/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>现在越来越多的人，主要是程序员喜欢在Github上写博客，一切都任由你左右，一个commit就能提交一篇文章，还有着无限流量免费的空间，想想就惬意不止。</p>
+<p>进入正题，如何利用Github和Jekyll搭建一个博客：</p>
+<hr>
+<h2 id="1-关于Github"><a href="#1-关于Github" class="headerlink" title="1. 关于Github"></a>1. 关于Github</h2><p><img src="/uploads/github.jpg" alt=""></p>
+<ul>
+<li><a href="http://www.yangzhiping.com/tech/github.html" target="_blank" rel="external">如何高效利用Github</a></li>
+<li><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="external">git - 简明指南</a></li>
+</ul>
+<h4 id="免费托管到GitHub页面-Free-hosting-with-GitHub-Pages"><a href="#免费托管到GitHub页面-Free-hosting-with-GitHub-Pages" class="headerlink" title="免费托管到GitHub页面(Free hosting with GitHub Pages)"></a>免费托管到GitHub页面(Free hosting with GitHub Pages)</h4><p><a href="https://pages.github.com/" target="_blank" rel="external">阅读官方指引</a></p>
+<ol>
+<li>在GitHub创建自己的库，名字必须是 username.github.io，<br><strong>注意：username必须是在github上注册的名称，而不能随意命名，否则访问 <a href="http://username.github.io" target="_blank" rel="external">http://username.github.io</a> 时会报404错误。</strong></li>
+<li>通过命令行或GitHub Desktop Clone库到本地；</li>
+<li>创建一个index.html页面，并提交到github服务器；</li>
+<li>通过浏览器访问 <a href="http://username.github.io" target="_blank" rel="external">http://username.github.io</a> ，如果正常显示index.html内容，则表示已经成功。</li>
+</ol>
+<h2 id="2-关于Jekyll"><a href="#2-关于Jekyll" class="headerlink" title="2. 关于Jekyll"></a>2. 关于Jekyll</h2><p><img src="/uploads/jekyll.jpg" alt=""></p>
+<ul>
+<li><a href="http://jekyllcn.com/" target="_blank" rel="external">Jekyll中文指导手册</a></li>
+</ul>
+<p><a href="https://help.github.com/articles/using-jekyll-with-pages/" target="_blank" rel="external">阅读官方指引</a><br>GitHub Pages为了提供对HTML内容的支持，选择了Jekyll作为模板系统，Jekyll是一个强大的静态模板系统，作为个人博客使用，基本上可以满足要求，也能保持管理的方便，你可以查看<a href="http://jekyllrb.com/docs/home/" target="_blank" rel="external">Jekyll官方文档</a>。</p>
+<h4 id="安装Jekyll"><a href="#安装Jekyll" class="headerlink" title="安装Jekyll"></a>安装Jekyll</h4><ul>
+<li>安装Ruby，如果是windows系统，使用RubyInstaller安装，下载地址：<a href="http://rubyinstaller.org/downloads/，" target="_blank" rel="external">http://rubyinstaller.org/downloads/，</a><br>  安装时指定一个路径地址即可（安装时选择将ruby路径写入到环境变量PATH）。</li>
+<li>安装Bundler，运行命令： <code>gem install bundler</code>。<br>  如果命令无法识别，则a步骤没有将ruby路径添加到PATH中，另外在办公网，尽量使用Staff-Wifi</li>
+<li>切换到github本地库目录下，创建名称为 Gemfile 的文件，并将以下内容粘贴到文件内，保存。<br>  <code>source &#39;https://rubygems.org&#39;</code><br>  <code>gem &#39;github-pages&#39;</code></li>
+<li>下载Ruby DEVELOPMENT KIT(<a href="http://rubyinstaller.org/downloads/),安装说明参考（https://github.com/oneclick/rubyinstaller/wiki/Development-Kit）" target="_blank" rel="external">http://rubyinstaller.org/downloads/),安装说明参考（https://github.com/oneclick/rubyinstaller/wiki/Development-Kit）</a><br>  将文件提取到某个目录，如D:\env\devkit<br>  <code>cd D:\env\devkit</code><br>  <code>ruby dk.rb init</code><br>  编辑 config.yml, 最后面加入 - D:/env/Ruby22-x64<br>  <code>ruby dk.rb review</code>，校验</li>
+<li>回到github本地库目录下，运行 <code>bundle install</code>，等待安装。</li>
+</ul>
+<h4 id="运行Jekyll"><a href="#运行Jekyll" class="headerlink" title="运行Jekyll"></a>运行Jekyll</h4><p>在github本地库根目录下，运行命令：<code>bundle exec jekyll serve</code>，启动后访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 查看页面效果</p>
+<h4 id="更新Jekyll为最新版本"><a href="#更新Jekyll为最新版本" class="headerlink" title="更新Jekyll为最新版本"></a>更新Jekyll为最新版本</h4><p>在github本地库根目录下，直接运行命令 <code>bundle update</code> 即可</p>
+<h4 id="安装python，http-www-python-org-download"><a href="#安装python，http-www-python-org-download" class="headerlink" title="安装python，http://www.python.org/download/"></a>安装python，<a href="http://www.python.org/download/" target="_blank" rel="external">http://www.python.org/download/</a></h4><h4 id="安装-‘Easy-Install‘"><a href="#安装-‘Easy-Install‘" class="headerlink" title="安装 ‘Easy Install‘"></a>安装 ‘Easy Install‘</h4><p>下载 ez_setup.py 并保存，然后从python运行 python “目录/ez_setup.py”</p>
+<h4 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h4><p>基本的Jekyll结构如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">|-- _config.yml</span><br><span class="line">|-- _includes</span><br><span class="line">|-- _layouts</span><br><span class="line">|   |-- default.html</span><br><span class="line">|   `-- post.html</span><br><span class="line">|-- _posts</span><br><span class="line">|   |-- 2007-10-29-why-every-programmer-should-play-nethack.textile</span><br><span class="line">|   `-- 2009-04-26-barcamp-boston-4-roundup.textile</span><br><span class="line">|-- _site</span><br><span class="line">`-- index.html</span><br></pre></td></tr></table></figure></p>
+<p><strong>_config.yml</strong></p>
+<p>配置文件，用来定义你想要的效果，设置之后就不用关心了。</p>
+<p><strong>_includes</strong></p>
+<p>可以用来存放一些小的可复用的模块，方便通过{ % include file.ext %}（去掉前两个{中或者{与%中的空格，下同）灵活的调用。这条命令会调用_includes/file.ext文件。</p>
+<p><strong>layouts</strong></p>
+<p>这是模板文件存放的位置。模板需要通过YAML front matter来定义，后面会讲到，{ { content }}标记用来将数据插入到这些模板中来。</p>
+<p><strong>posts</strong></p>
+<p>你的动态内容，一般来说就是你的博客正文存放的文件夹。他的命名有严格的规定，必须是2012-02-22-artical-title.MARKUP这样的形式，MARKUP是你所使用标记语言的文件后缀名，根据_config.yml中设定的链接规则，可以根据你的文件名灵活调整，文章的日期和标记语言后缀与文章的标题的独立的。</p>
+<p><strong>site</strong></p>
+<p>这个是Jekyll生成的最终的文档，不用去关心。最好把他放在你的.gitignore文件中忽略它。</p>
+<h4 id="YAML-Front-Matter和模板变量"><a href="#YAML-Front-Matter和模板变量" class="headerlink" title="YAML Front Matter和模板变量"></a>YAML Front Matter和模板变量</h4><p>对于使用YAML定义格式的文章，Jekyll会特别对待，他的格式要求比较严格，必须是这样的形式：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">layout:</span> post</span><br><span class="line"><span class="attr">title:</span> Blogging Like a Hacker</span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>前后的—不能省略，在这之间，你可以定一些你需要的变量，layout就是调用_layouts下面的某一个模板，他还有一些其他的变量可以使用：</p>
+<ul>
+<li><code>permalink</code> 你可以对某一篇文章使用通用设置之外的永久链接</li>
+<li><code>published</code> 可以单独设置某一篇文章是否需要发布</li>
+<li><code>category</code> 设置文章的分类</li>
+<li><code>tags</code> 设置文章的tag<br>上面的title就是自定义的内容，你也可以设置其他的内容，在文章中可以通过{ { page.title }}这样的形式调用。</li>
+</ul>
+<h4 id="使用Jekyll-Bootstrap模板"><a href="#使用Jekyll-Bootstrap模板" class="headerlink" title="使用Jekyll-Bootstrap模板"></a>使用<a href="http://jekyllbootstrap.com/" target="_blank" rel="external">Jekyll-Bootstrap</a>模板</h4><ul>
+<li><p>安装 Jekyll-Bootstrap</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/plusjade/jekyll-bootstrap.git USERNAME.github.com</span><br><span class="line">cd USERNAME.github.com</span><br><span class="line">git remote set-url origin git@github.com:USERNAME/USERNAME.github.com.git</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本地运行Jekyll<br><code>$ gem install jekyll</code><br><code>$ cd USERNAME.github.com</code><br><code>$ jekyll serve</code></p>
+</li>
+<li><p>创建日志<br><code>$ rake post title=&quot;Hello World&quot;</code></p>
+</li>
+<li><p>部署<br><code>$ git add .</code><br><code>$ git commit -m &quot;Add new content&quot;</code><br><code>$ git push origin master</code></p>
+</li>
+</ul>
+<p><strong>注意：Jekyll-boostrap模板已经很长时间没有更新，建议不要直接使用该模板，可以根据ruby语言，自己构建模板</strong></p>
+<h2 id="3-给Github项目创建Jekyll站点"><a href="#3-给Github项目创建Jekyll站点" class="headerlink" title="3. 给Github项目创建Jekyll站点"></a>3. 给Github项目创建Jekyll站点</h2><ul>
+<li>在github.com进入到指定的repository</li>
+<li>创建gh-pages 分支即可<br><strong>分支的名称必须为：gh-pages</strong></li>
+</ul>
 
           
         
@@ -518,7 +918,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -535,7 +935,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
