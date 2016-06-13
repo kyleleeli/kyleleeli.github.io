@@ -1,0 +1,691 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="React," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="先来看一段代码，直观感受一下：12345678910111213var CommentBox = React.createClass(&amp;#123;  render: function() &amp;#123;    return (      &amp;lt;div className=&quot;commentBox&quot;&amp;gt;        Hello, world! I am a CommentBox.      &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ReactJS使用入门">
+<meta property="og:url" content="http://kyleleeli.github.io/2016/06/05/reactjs-guides/index.html">
+<meta property="og:site_name" content="kyle lee">
+<meta property="og:description" content="先来看一段代码，直观感受一下：12345678910111213var CommentBox = React.createClass(&amp;#123;  render: function() &amp;#123;    return (      &amp;lt;div className=&quot;commentBox&quot;&amp;gt;        Hello, world! I am a CommentBox.      &amp;">
+<meta property="og:image" content="http://kyleleeli.github.io/uploads/reactjs.png">
+<meta property="og:image" content="http://kyleleeli.github.io/uploads/react-component.png">
+<meta property="og:image" content="http://kyleleeli.github.io/uploads/flux-overview.png">
+<meta property="og:updated_time" content="2016-06-13T03:24:35.184Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ReactJS使用入门">
+<meta name="twitter:description" content="先来看一段代码，直观感受一下：12345678910111213var CommentBox = React.createClass(&amp;#123;  render: function() &amp;#123;    return (      &amp;lt;div className=&quot;commentBox&quot;&amp;gt;        Hello, world! I am a CommentBox.      &amp;">
+<meta name="twitter:image" content="http://kyleleeli.github.io/uploads/reactjs.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> ReactJS使用入门 | kyle lee </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?6cd9f1df453b025168ba23614f28933a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">kyle lee</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">深圳，腾讯，全栈工程师</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ReactJS使用入门
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-05T21:18:07+08:00" content="2016-06-05">
+              2016-06-05
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/05/reactjs-guides/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/05/reactjs-guides/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/uploads/reactjs.png" alt="React" title="reactjs"></p>
+<p>先来看一段代码，直观感受一下：<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> CommentBox = React.createClass(&#123;</span><br><span class="line">  render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className="commentBox"&gt;</span><br><span class="line">        Hello, world! I am a CommentBox.</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;CommentBox /&gt;,</span><br><span class="line">  document.getElementById('content')</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<p>JSX转义后的js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> CommentBox = React.createClass(&#123;displayName: <span class="string">'CommentBox'</span>,</span><br><span class="line">  render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      React.createElement(<span class="string">'div'</span>, &#123;className: <span class="string">"commentBox"</span>&#125;,</span><br><span class="line">        <span class="string">"Hello, world! I am a CommentBox."</span></span><br><span class="line">      )</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  React.createElement(CommentBox, <span class="literal">null</span>),</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'content'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>React 是一个 Facebook 和 Instagram 用来创建用户界面的 JavaScript 库。<br>React 的核心思想是：<strong>封装组件</strong>。<br>各个组件维护自己的状态和 UI，当状态变更，自动重新渲染整个组件。<br>基于这种方式的一个直观感受就是我们不再需要不厌其烦地来回查找某个 DOM 元素，然后操作 DOM 去更改 UI。<br>React 大体包含下面这些概念：</p>
+<ul>
+<li>组件</li>
+<li>JSX</li>
+<li>Virtual DOM</li>
+<li>Data Flow</li>
+</ul>
+<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><p>在构建组件之前，需要根据功能将用户界面拆分为一个组件树，比如下面的评论区功能：<br><img src="/uploads/react-component.png" alt="comments" title="react component example"></p>
+<p>组件树划分完成后，就可以进行具体的开发工作。</p>
+<p>引入<code>react.js</code>和<code>react-dom.js</code>，如果是开发环境可以通过<code>browser.min.js</code>在线转换JSX语法，大概的html模板样例如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../build/react.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../build/react-dom.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../build/browser.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/babel"</span>&gt;</span><span class="javascript"></span><br><span class="line">      <span class="comment">// ** Our code goes here! **</span></span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>可以将代码直接写入script标签内，也可以作为外部文件引入：<br><code>&lt;script type=&quot;text/babel&quot; src=&quot;scripts/helloworld.js&quot;&gt;&lt;/script&gt;</code></p>
+<p>创建组件通过 <code>React.createClass</code>方法，将组件渲染到指定DOM节点内：<code>ReactDOM.render</code></p>
+<h4 id="props、state"><a href="#props、state" class="headerlink" title="props、state"></a>props、state</h4><p>父元素（组件）是通过props传递数据给子元素（组件）的，子元素通过<code>this.props.xxx</code>访问具体的属性值。</p>
+<p><code>this.props</code> 对象的属性与组件的属性一一对应，但是有一个例外，就是 <code>this.props.children</code> 属性。它表示组件的所有子节点</p>
+<p>组件免不了要与用户互动，React 的一大创新，就是将组件看成是一个状态机，一开始有一个初始状态，然后用户互动，导致状态变化，从而触发重新渲染 UI 。</p>
+<p>state是元素自身的状态属性，通过组件生命周期中的<code>getInitialState</code>设置默认值。</p>
+<p>两者区别：<code>this.props</code> 表示那些一旦定义，就不再改变的特性，而 <code>this.state</code>是会随着用户互动而产生变化的特性。</p>
+<h4 id="ref、findDOMNode"><a href="#ref、findDOMNode" class="headerlink" title="ref、findDOMNode"></a>ref、findDOMNode</h4><p>React 支持一种非常特殊的属性，你可以用来绑定到 <code>render()</code>输出的任何组件上去。这个特殊的属性允许你引用 `render()`` 返回的相应的支撑实例（ backing instance ）。这样就可以确保在任何时间总是拿到正确的实例。</p>
+<p>做法很简单：<br>1、绑定一个 ref 属性到 render 返回的东西上面去，例如：<br><code>&lt;input ref=&quot;myInput&quot; /&gt;</code><br>2、在其它代码中（典型地事件处理代码），通过 <code>this.refs</code> 获取支撑实例（ backing instance ），就像这样：<br>  <code>this.refs.myInput</code><br>你可以通过调用 <code>this.refs.myInput.getDOMNode()</code> 直接获取到组件的 DOM 节点。</p>
+<p>当组件加载到页面上之后（mounted），你都可以通过 react-dom 提供的 findDOMNode() 方法拿到组件对应的 DOM 元素。</p>
+<h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><ul>
+<li>Mounting (已插入真实 DOM)<ul>
+<li>getInitialState</li>
+<li>componentWillMount</li>
+<li>componentDidMount</li>
+</ul>
+</li>
+<li>Updating (正在被重新渲染)<ul>
+<li>componentWillReceiveProps</li>
+<li>shouldComponentUpdate</li>
+<li>componentWillUpdate</li>
+<li>componentDidUpdate</li>
+</ul>
+</li>
+<li>UnMounting (已移出真实 DOM)<ul>
+<li>componentWillUnmount</li>
+</ul>
+</li>
+</ul>
+<h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><p>JSX 是一个看起来很像 XML 的 JavaScript 语法扩展。React 可以用来做简单的 JSX 句法转换。</p>
+<p>利用 JSX 编写 DOM 结构，可以用原生的 HTML 标签，也可以直接像普通标签一样引用 React 组件。这两者约定通过大小写来区分，小写的字符串是 HTML 标签，大写开头的变量是 React 组件。</p>
+<h4 id="为什么要使用JSX？"><a href="#为什么要使用JSX？" class="headerlink" title="为什么要使用JSX？"></a>为什么要使用JSX？</h4><p>你不需要为了 React 使用 JSX，可以直接使用纯粹的 JS。但我们更建议使用 JSX , 因为它能定义简洁且我们熟知的包含属性的树状结构语法。<br>对于非专职开发者（比如设计师）同样比较熟悉。<br>XML 有固定的标签开启和闭合。这能让复杂的树更易于阅读，优于方法调用和对象字面量的形式。<br>它没有修改 JavaScript 语义。</p>
+<h4 id="HTML标签-与-React组件-对比"><a href="#HTML标签-与-React组件-对比" class="headerlink" title="HTML标签 与 React组件 对比"></a>HTML标签 与 React组件 对比</h4><p>React 可以渲染 HTML 标签 (strings) 或 React 组件 (classes)。<br>要渲染 HTML 标签，只需在 JSX 里使用小写字母开头的标签名。</p>
+<p>如同开篇的例子一样，JSX及转换后的JS：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myDivElement = <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"foo"</span> /&gt;</span>;</span><br><span class="line">React.render(myDivElement, document.body);</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MyComponent = React.createClass(&#123;<span class="comment">/*...*/</span>&#125;);</span><br><span class="line"><span class="keyword">var</span> myElement = <span class="xml"><span class="tag">&lt;<span class="name">MyComponent</span> <span class="attr">someProperty</span>=<span class="string">&#123;true&#125;</span> /&gt;</span>;</span><br><span class="line">React.render(myElement, document.body);</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意:<br>由于 JSX 就是 JavaScript，一些标识符像 class 和 for 不建议作为 XML 属性名。作为替代，React DOM 使用 className 和 htmlFor 来做对应的属性</p>
+</blockquote>
+<h4 id="属性表达式"><a href="#属性表达式" class="headerlink" title="属性表达式"></a>属性表达式</h4><p>要使用 JavaScript 表达式作为属性值，只需把这个表达式用一对大括号 ({}) 包起来，不要用引号 (“”)。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 输入 (JSX):</span></span><br><span class="line"><span class="keyword">var</span> person = <span class="xml"><span class="tag">&lt;<span class="name">Person</span> <span class="attr">name</span>=<span class="string">&#123;window.isLoggedIn</span> ? <span class="attr">window.name</span> <span class="attr">:</span> ''&#125; /&gt;</span>;</span><br><span class="line">// 输出 (JS):</span><br><span class="line">var person = React.createElement(</span><br><span class="line">  Person,</span><br><span class="line">  &#123;name: window.isLoggedIn ? window.name : ''&#125;</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>JSX 里添加注释很容易；它们只是 JS 表达式而已。你只需要在一个标签的子节点内(非最外层)小心地用 {} 包围要注释的部分。</p>
+<h4 id="延展属性"><a href="#延展属性" class="headerlink" title="延展属性"></a>延展属性</h4><p>如果你事先知道组件需要的全部 Props（属性），JSX 很容易地这样写：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> component = <span class="xml"><span class="tag">&lt;<span class="name">Component</span> <span class="attr">foo</span>=<span class="string">&#123;x&#125;</span> <span class="attr">bar</span>=<span class="string">&#123;y&#125;</span> /&gt;</span>;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> props = &#123;&#125;;</span><br><span class="line">props.foo = x;</span><br><span class="line">props.bar = y;</span><br><span class="line"><span class="keyword">var</span> component = <span class="xml"><span class="tag">&lt;<span class="name">Component</span> &#123;<span class="attr">...props</span>&#125; /&gt;</span>;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Data-Flow"><a href="#Data-Flow" class="headerlink" title="Data Flow"></a>Data Flow</h3><h4 id="Flux"><a href="#Flux" class="headerlink" title="Flux"></a>Flux</h4><p>React 标榜自己是 MVC 里面 V 的部分，那么 Flux 就相当于添加 M 和 C 的部分。<br>Flux 是 Facebook 使用的一套前端应用的架构模式。<br>一个 Flux 应用主要包含四个部分：</p>
+<ul>
+<li>the dispatcher<br>处理动作分发，维护 Store 之间的依赖关系</li>
+<li>the stores<br>数据和逻辑部分</li>
+<li>the views<br>React 组件，这一层可以看作 controller-views，作为视图同时响应用户交互</li>
+<li>the actions<br>提供给 dispatcher 传递数据给 store</li>
+</ul>
+<p>针对上面提到的 Flux 这些概念，需要写一个简单的类库来实现衔接这些功能，市面上有很多种实现，这里讨论 Facebook 官方的一个实现 Dispatcher.js</p>
+<h4 id="单向数据流"><a href="#单向数据流" class="headerlink" title="单向数据流"></a>单向数据流</h4><p>先来了解一下 Flux 的核心“单向数据流“怎么运作的：<br><code>Action -&gt; Dispatcher -&gt; Store -&gt; View</code></p>
+<p>更多时候 View 会通过用户交互触发 Action，所以一个简单完整的数据流类似这样：</p>
+<p><img src="/uploads/flux-overview.png" alt="Alt text" title="flux overview"></p>
+<p>整个流程如下：</p>
+<ul>
+<li>首先要有 action，通过定义一些 action creator 方法根据需要创建 Action 提供给 dispatcher</li>
+<li>View 层通过用户交互（比如 onClick）会触发 Action</li>
+<li>Dispatcher 会分发触发的 Action 给所有注册的 Store 的回调函数</li>
+<li>Store 回调函数根据接收的 Action 更新自身数据之后会触发一个 change 事件通知 View 数据更改了</li>
+<li>View 会监听这个 change 事件，拿到对应的新数据并调用 setState 更新组件 UI</li>
+</ul>
+<p>所有的状态都由 Store 来维护，通过 Action 传递数据，构成了如上所述的单向数据流循环，所以应用中的各部分分工就相当明确，高度解耦了。<br>这种单向数据流使得整个系统都是透明可预测的。</p>
+<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><p>预编译JSX（Precompiled JSX）</p>
+<pre><code>1. 安装babel：`npm install -g babel-cli`
+2. 在项目目录中执行：`npm install babel-preset-es2015 babel-preset-react`
+3. 然后就可以直接调用`babel --presets es2015,react --watch src/ --out-dir lib/`编译输出
+4. 也可以通过`echo { &quot;presets&quot;: [&quot;es2015&quot;,&quot;react&quot;] } &gt; .babelrc`创建babel配置文件，这样就不需要每次指定`--presets`
+</code></pre><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><pre><code>1. 动画
+</code></pre><h3 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h3><pre><code>1. 为什么手写的情况下，不会报唯一id的警告，循环就会报警告?
+(http://react-china.org/t/key/5797)
+2. Jsx怎么进行调试？
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React/" rel="tag">#React</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/26/css3-learning-two/" rel="next" title="CSS3进阶（二）">
+                <i class="fa fa-chevron-left"></i> CSS3进阶（二）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/05/reactjs-guides/"
+           data-title="ReactJS使用入门" data-url="http://kyleleeli.github.io/2016/06/05/reactjs-guides/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="kyle lee" />
+          <p class="site-author-name" itemprop="name">kyle lee</p>
+          <p class="site-description motion-element" itemprop="description">专注.NET开发，对移动开发、Web前端开发兴趣浓厚</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件"><span class="nav-number">2.</span> <span class="nav-text">组件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建"><span class="nav-number">2.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#props、state"><span class="nav-number">2.2.</span> <span class="nav-text">props、state</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ref、findDOMNode"><span class="nav-number">2.3.</span> <span class="nav-text">ref、findDOMNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生命周期"><span class="nav-number">2.4.</span> <span class="nav-text">生命周期</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX"><span class="nav-number">3.</span> <span class="nav-text">JSX</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么要使用JSX？"><span class="nav-number">3.1.</span> <span class="nav-text">为什么要使用JSX？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML标签-与-React组件-对比"><span class="nav-number">3.2.</span> <span class="nav-text">HTML标签 与 React组件 对比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性表达式"><span class="nav-number">3.3.</span> <span class="nav-text">属性表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注释"><span class="nav-number">3.4.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#延展属性"><span class="nav-number">3.5.</span> <span class="nav-text">延展属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Flow"><span class="nav-number">4.</span> <span class="nav-text">Data Flow</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Flux"><span class="nav-number">4.1.</span> <span class="nav-text">Flux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单向数据流"><span class="nav-number">4.2.</span> <span class="nav-text">单向数据流</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工具"><span class="nav-number">5.</span> <span class="nav-text">工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插件"><span class="nav-number">6.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">7.</span> <span class="nav-text">Q&A</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kyle lee</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"kylelee"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
