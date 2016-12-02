@@ -1,0 +1,654 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS3," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="需要了解的内容
+vw,vh,vmin,vmax,em,rem
+flex
+box-sizing
+transform
+transition
+animation
+gradient
+
+3. box-sizing盒模型（box model）讲box-sizing之前，先了解一下css中重要的概念：盒模型盒模型就是元素的宽（width）、高（height）和内容（content）、外边距（margin）、内边">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3进阶（三）">
+<meta property="og:url" content="http://kyleleeli.github.io/2016/06/13/css3-learning-three/index.html">
+<meta property="og:site_name" content="kyle lee">
+<meta property="og:description" content="需要了解的内容
+vw,vh,vmin,vmax,em,rem
+flex
+box-sizing
+transform
+transition
+animation
+gradient
+
+3. box-sizing盒模型（box model）讲box-sizing之前，先了解一下css中重要的概念：盒模型盒模型就是元素的宽（width）、高（height）和内容（content）、外边距（margin）、内边">
+<meta property="og:image" content="http://kyleleeli.github.io/uploads/box-sizing.png">
+<meta property="og:updated_time" content="2016-07-01T14:16:17.334Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3进阶（三）">
+<meta name="twitter:description" content="需要了解的内容
+vw,vh,vmin,vmax,em,rem
+flex
+box-sizing
+transform
+transition
+animation
+gradient
+
+3. box-sizing盒模型（box model）讲box-sizing之前，先了解一下css中重要的概念：盒模型盒模型就是元素的宽（width）、高（height）和内容（content）、外边距（margin）、内边">
+<meta name="twitter:image" content="http://kyleleeli.github.io/uploads/box-sizing.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> CSS3进阶（三） | kyle lee </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?6cd9f1df453b025168ba23614f28933a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">kyle lee</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">深圳，腾讯，全栈工程师</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSS3进阶（三）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-13T22:23:57+08:00" content="2016-06-13">
+              2016-06-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/13/css3-learning-three/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/13/css3-learning-three/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="需要了解的内容"><a href="#需要了解的内容" class="headerlink" title="需要了解的内容"></a>需要了解的内容</h1><ul>
+<li>vw,vh,vmin,vmax,em,rem</li>
+<li>flex</li>
+<li>box-sizing</li>
+<li>transform</li>
+<li>transition</li>
+<li>animation</li>
+<li>gradient</li>
+</ul>
+<h3 id="3-box-sizing"><a href="#3-box-sizing" class="headerlink" title="3. box-sizing"></a>3. box-sizing</h3><h4 id="盒模型（box-model）"><a href="#盒模型（box-model）" class="headerlink" title="盒模型（box model）"></a>盒模型（box model）</h4><p>讲box-sizing之前，先了解一下css中重要的概念：<strong>盒模型</strong><br>盒模型就是元素的宽（width）、高（height）和内容（content）、外边距（margin）、内边距（padding）、边框（border）之间的计算关系。<br>主要分为两类：W3C标准模型和IE传统模型。</p>
+<ul>
+<li><p>W3C标准盒模型</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/*外盒尺寸计算（元素空间尺寸）*/</span><br><span class="line"> Element 空间高度 = content height + padding + border + margin</span><br><span class="line"> Element 空间宽度 = content width + padding + border + margin</span><br><span class="line"> /*内盒尺寸计算（元素大小）*/</span><br><span class="line"> Element Height = content height + padding + border （Height为内容高度）</span><br><span class="line"> Element Width = content width + padding + border （Width为内容宽度）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>IE传统模型（IE6以下）</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/*外盒尺寸计算（元素空间尺寸）*/</span><br><span class="line">Element空间高度 = content Height + margin (Height包含了元素内容宽度，边框宽度，内距宽度)</span><br><span class="line">Element空间宽度 = content Width + margin (Width包含了元素内容宽度、边框宽度、内距宽度)</span><br><span class="line">/*内盒尺寸计算（元素大小）*/</span><br><span class="line">Element Height = content Height(Height包含了元素内容宽度，边框宽度，内距宽度)</span><br><span class="line">Element Width = content Width(Width包含了元素内容宽度、边框宽度、内距宽度)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>对比上面的两个公式，可以发现：外盒尺寸=内盒尺寸+margin，而不同的地方就在：<strong>内盒尺寸</strong>的计算方式不同。<br>如果打开IE和chrome的调试窗口，观察盒子模型的计算就可以发现不同之处（以宽度示例）：IE下定义元素的宽度是包含了padding、border的宽度的，而chrome下是不包含的，这样如果定义了padding、border的话，会导致元素的实际宽度比定义的要宽。</p>
+<p>为了解决这个差异，css3就定义了box-sizing样式：<br><code>box-sizing ： content-box || border-box || inherit</code></p>
+<p><code>content-box</code>: 是默认值，即W3C标准模型，width=定义的元素width+padding+border<br><code>border-box</code>：IE传统模型，width=定义的元素width<br>看一张图片就很明显了，特别是在有padding、margin、border的情况下，元素的宽度差别还是挺大的：<br><img src="/uploads/box-sizing.png" alt="box-sizing" title="box sizing"></p>
+<h3 id="4-transform"><a href="#4-transform" class="headerlink" title="4. transform"></a>4. transform</h3><h4 id="2D-转换（2D-transform）"><a href="#2D-转换（2D-transform）" class="headerlink" title="2D 转换（2D transform）"></a>2D 转换（2D transform）</h4><h4 id="3D-转换（3D-transform）"><a href="#3D-转换（3D-transform）" class="headerlink" title="3D 转换（3D transform）"></a>3D 转换（3D transform）</h4><h3 id="5-transition"><a href="#5-transition" class="headerlink" title="5. transition"></a>5. transition</h3><h3 id="6-animation"><a href="#6-animation" class="headerlink" title="6. animation"></a>6. animation</h3>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS3/" rel="tag">#CSS3</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/05/reactjs-guides/" rel="next" title="ReactJS使用入门">
+                <i class="fa fa-chevron-left"></i> ReactJS使用入门
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/22/use-react-question-collection/" rel="prev" title="React使用过程中问题汇总">
+                React使用过程中问题汇总 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/13/css3-learning-three/"
+           data-title="CSS3进阶（三）" data-url="http://kyleleeli.github.io/2016/06/13/css3-learning-three/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="kyle lee" />
+          <p class="site-author-name" itemprop="name">kyle lee</p>
+          <p class="site-description motion-element" itemprop="description">专注.NET开发，对移动开发、Web前端开发兴趣浓厚</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#需要了解的内容"><span class="nav-number">1.</span> <span class="nav-text">需要了解的内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-box-sizing"><span class="nav-number">1.0.1.</span> <span class="nav-text">3. box-sizing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#盒模型（box-model）"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">盒模型（box model）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-transform"><span class="nav-number">1.0.2.</span> <span class="nav-text">4. transform</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2D-转换（2D-transform）"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">2D 转换（2D transform）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3D-转换（3D-transform）"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">3D 转换（3D transform）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-transition"><span class="nav-number">1.0.3.</span> <span class="nav-text">5. transition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-animation"><span class="nav-number">1.0.4.</span> <span class="nav-text">6. animation</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kyle lee</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"kylelee"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

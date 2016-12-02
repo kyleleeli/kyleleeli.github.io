@@ -157,7 +157,7 @@ vw、vh都是css3新增的长度单位。
 <meta property="og:image" content="http://kyleleeli.github.io/uploads/flex-grow.png">
 <meta property="og:image" content="http://kyleleeli.github.io/uploads/flex-shrink.jpg">
 <meta property="og:image" content="http://kyleleeli.github.io/uploads/flex-align-self.png">
-<meta property="og:updated_time" content="2016-06-13T14:13:38.052Z">
+<meta property="og:updated_time" content="2016-06-15T02:53:00.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3进阶（二）">
 <meta name="twitter:description" content="需要了解的内容
@@ -415,6 +415,7 @@ vw、vh都是css3新增的长度单位。
 <p>以<code>vw</code>为例，先给个公式：<br><code>vw = 1/100 * viewport</code></p>
 <p>这里的<code>viewport</code>指的视窗，也就是浏览器内的可视区域（不包含浏览器自己的状态栏、工具栏等）。<br>vw单位跟百分比很相似，不同的是vw的值对所有的元素都一样，与他们父元素或父元素的宽度无关。有点像rem单位那样总是相对于根元素。</p>
 <p><code>vh</code>的效果类似，就不再阐述。</p>
+<p><strong>特别注意：viewport单位会把滚动条宽度也包含在内</strong></p>
 <h4 id="vmin-vmax"><a href="#vmin-vmax" class="headerlink" title="vmin,vmax"></a>vmin,vmax</h4><p><code>vh</code>和<code>vm</code>总是与视口的高度和宽度有关，与之不同的，<code>vmin</code>和<code>vmax</code>是与这次宽度和高度的最大值或最小值有关，取决于哪个更大和更小。例如，如果浏览器设置为<code>1100px</code>宽、<code>700px</code>高，<code>1vmin</code>会是<code>7px</code>,<code>1vmax</code>为<code>11px</code>。然而，如果宽度设置为<code>800px</code>，高度设置为<code>1080px</code>，<code>1vmin</code>将会等于<code>8px</code>而<code>1vmax</code>将会是<code>10.8px</code>。</p>
 <p><code>vh</code>,<code>vw</code>的使用场景比较好理解，<code>vmin</code>,<code>wmax</code>到底什么时候使用呢？</p>
 <p>场景一：</p>
@@ -731,7 +732,7 @@ vw、vh都是css3新增的长度单位。
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -748,7 +749,7 @@ vw、vh都是css3新增的长度单位。
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -243,6 +243,575 @@
             
               
                 
+                <a class="post-title-link" href="/2016/12/02/java-ecosystem/" itemprop="url">
+                  Java生态系统
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-02T12:24:07+08:00" content="2016-12-02">
+              2016-12-02
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/02/java-ecosystem/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/02/java-ecosystem/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Java生态系统"><a href="#Java生态系统" class="headerlink" title="Java生态系统"></a>Java生态系统</h1><h3 id="成长过程（历史）"><a href="#成长过程（历史）" class="headerlink" title="成长过程（历史）"></a>成长过程（历史）</h3><ul>
+<li><p>作者：James Gosling（詹姆斯·高斯林）</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/James_Gosling_2008.jpg/239px-James_Gosling_2008.jpg" alt="James Gosling"></p>
+</li>
+<li><p>1995.5 Sun公司推出Java语言，2010被Oracle收购</p>
+<blockquote>
+<p>名称由来：最早叫Oak（橡树），但因为被别的公司注册，所以决定再重新起名，排名第一的 <strong>Silk（丝绸）</strong> 遭到Gosling反对，第二、第三（Lyric（抒情诗））没有通过商标律师，排名第四的 <strong>Java</strong> 最终通过，Java是印度尼西亚爪哇岛的英文名称，因盛产咖啡而闻名，国外的许多咖啡店用Java来命名或宣传，以彰显其咖啡的品质。Java语言中的许多库类名称，多与咖啡有关，如JavaBeans（咖啡豆）、NetBeans（网络豆）以及ObjectBeans （对象豆）等等。</p>
+</blockquote>
+</li>
+<li><p>语言特性：OO、跨平台、泛型编程</p>
+</li>
+<li>号称“Write Once, Run Anywhere”</li>
+<li><p>版本：</p>
+<ul>
+<li>JDK 1.0 (January 21, 1996)</li>
+<li>JDK 1.1 (February 19, 1997)</li>
+</ul>
+<blockquote>
+<p>技术：JAR文件格式、JDBC、JavaBeans、RMI。<br>语法：内部类（Inner Class）和反射（Reflection）。</p>
+</blockquote>
+<ul>
+<li>J2SE 1.2 (December 8, 1998)</li>
+<li>J2SE 1.3 (May 8, 2000)</li>
+<li>J2SE 1.4 (February 6, 2002) </li>
+<li>J2SE 5.0 (September 30, 2004)<blockquote>
+<p>重大更新，泛型支持、基本类型的自动装箱、改进的循环、枚举类型、格式化I/O及可变参数</p>
+</blockquote>
+</li>
+<li>Java SE 6 (December 11, 2006)</li>
+<li>Java SE 7 (July 28, 2011)</li>
+<li>Java SE 8 (March 18, 2014)</li>
+</ul>
+<p><img src="assets/java/java-release-dates.png" alt="java release dates"></p>
+<p><img src="assets/java/java-features2.png" alt="java features"></p>
+<blockquote>
+<p><strong>SE</strong> : Standard Edition，包含Java语言核心的类。比如：数据库连接、接口定义、输入/输出、网络编程。<br><strong>EE</strong> : Enterprise Edition，包含JSE中的类，并且还包含用于开发企业级应用的类。 比如：EJB、servlet、JSP、XML、事务控制。<br><strong>ME</strong> : Micro Edition，包含嵌入式开发或者移动应用开发所需要的类，包括一些JSE的核心代码和一些无线设备的API。  </p>
+</blockquote>
+<p><img src="assets/java/java-ee-7-update.jpg" alt=""></p>
+<hr>
+<blockquote>
+<p><strong>JDK</strong> : Java Development Kit，软件开发工具包，包含JRE和java工具（编译器javac、打包jar、文档生成器javadoc、调试jdb、运行java）<br><strong>JRE</strong> : Java Runtime Environment，java运行时环境，包含JVM和java核心库及支持文件<br><strong>JVM</strong> : Java Virtual Machine，java虚拟机，Java虚拟机有自己完善的硬体架构，如处理器、堆栈、寄存器等，还具有相应的指令系统。<br>JVM屏蔽了与具体操作系统平台相关的信息，使得Java程序只需生成在Java虚拟机上运行的目标代码（字节码），就可以在多种平台上不加修改地运行。<br>所以，除了java外，也可以运行其他语言，比较流行的如：Scala、Groovy</p>
+</blockquote>
+<p><img src="assets/java/jdk-jre-jvm-diff.png" alt="jdk-jre-JVM"></p>
+<p><img src="assets/java/jdk-jre-jvm-diff2.png" alt="jdk jre jvm difference"></p>
+<hr>
+<blockquote>
+<p><strong>JDK</strong> : 默认指的是Sun公司发布的jdk，但也有很多公司和组织自己研发专属的jdk<br><strong>Open JDK</strong> : JDK的开放原始码版本  </p>
+</blockquote>
+<p><img src="assets/java/jdk-openjdk-relation.jpg" alt="jdk-openjdk"></p>
+<p>区别：</p>
+<p>|    | JDK | Open JDK|<br>|— |—|—|<br>|协议 | JRL(JavaResearch License，Java研究授权协议)| GPL(General Public License) V2|<br>|代码完整度| 完整 | 从JDK7开始差距不大，缺少 SNMP |<br>|工具 | 完整 | 缺少部分工具，并且尽量分离|</p>
+<blockquote>
+<p><strong>JCP</strong> : Java Community Process，开放性国际组织<br><strong>JSR</strong> : Java Specification Requests，新功能或特性需提交JCP整理并规范为JSR，然后经过JCP执行委员会投票决定。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="繁衍子嗣（社区及衍生品）"><a href="#繁衍子嗣（社区及衍生品）" class="headerlink" title="繁衍子嗣（社区及衍生品）"></a>繁衍子嗣（社区及衍生品）</h3><ul>
+<li>Web：Spring MVC、Spring Boot、JSF、Structs</li>
+<li>RPC：Dubbo、Dubbox、Thrift</li>
+<li>ORM：Hibernate、MyBatis</li>
+<li>J2EE：Spring</li>
+<li>移动：Android</li>
+<li>JSON：fastjson</li>
+<li>全文搜索：Lucene</li>
+<li>ETL工具：Kettle</li>
+<li>模板引擎：Velocity、thymeleaf</li>
+<li>构建：Maven、Gradle、Ant</li>
+<li>应用服务器：Tomcat(Apache基金会)、Jetty、Wildfly、JBoss(Redhat)、WebLogic(Oracle)、WebSphere(IBM)</li>
+<li>持续集成：Jenkins</li>
+<li>分布式存储：Cassandra</li>
+<li>消息服务：ActiveMQ、RabbitMQ</li>
+<li>作业调度：Quartz</li>
+<li>单点登录：OpenSSO</li>
+<li>分布式搜索：ElasticSearch</li>
+<li>日志管理：Logstash</li>
+<li>动态脚本语言：Groovy</li>
+<li>单元测试：JUnit</li>
+</ul>
+<h4 id="应用开发"><a href="#应用开发" class="headerlink" title="应用开发"></a>应用开发</h4><ul>
+<li><p>Spring vs Java EE</p>
+<p><img src="assets/java/javaee-vs-spring.jpg" alt="spring vs java ee"></p>
+</li>
+</ul>
+<h4 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h4><ul>
+<li><p>Spring Boot VS Java EE</p>
+<p><img src="assets/java/microservices-java-ee-vs-spring-boot.jpg" alt="spring boot vs java ee"></p>
+<p><img src="assets/java/microservices-java-ee-vs-spring-cloud.jpg" alt="spring cloud vs java ee"></p>
+</li>
+</ul>
+<h4 id="大数据"><a href="#大数据" class="headerlink" title="大数据"></a>大数据</h4><p>  <img src="assets/java/hadoop-ecosystem.jpg" alt="Hadoop Ecosystem"></p>
+<p>  <a href="https://java-source.net/" target="_blank" rel="external">开源项目</a></p>
+<h3 id="大众脸？还是美人胚子？（流行度）"><a href="#大众脸？还是美人胚子？（流行度）" class="headerlink" title="大众脸？还是美人胚子？（流行度）"></a>大众脸？还是美人胚子？（流行度）</h3><h4 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h4><ul>
+<li>Redmonk</li>
+</ul>
+<p><img src="assets/java/redmonk-lang-rank-2016Q3.png" alt="redmonk languages rank"></p>
+<ul>
+<li>Tiobe</li>
+</ul>
+<p><img src="assets/java/tiobe-lang-rank-201611.png" alt="tiobe languages rank"></p>
+<p><img src="assets/java/tiobe-lang-rank-201611-2.png" alt="tiobe languages rank"></p>
+<h4 id="Java工具和技术调查"><a href="#Java工具和技术调查" class="headerlink" title="Java工具和技术调查"></a>Java工具和技术调查</h4><p><a href="http://zeroturnaround.com/rebellabs/java-tools-and-technologies-landscape-2016/" target="_blank" rel="external">原文链接</a></p>
+<ul>
+<li>总览：<blockquote>
+<p>68% 的开发者用 Maven；<br>68% 的在用 Git；<br>46% 的在用 Intellij IDEA;<br>43% 的在用 Spring MVC<br>34% 的在用 微服务架构；<br>32% 的在用 Docker；  </p>
+</blockquote>
+</li>
+</ul>
+<p><img src="assets/java/java_report/summary-1.png" alt="总览"></p>
+<blockquote>
+<p>62% 的在用 Java 8；<br>60% 的在用 Jenkins;<br>42% 的在用 Tomcat;<br>39% 的在用 Oracle DB;<br>31% 的在用 Java EE 7;<br>29% 的在用 Spring Boot;  </p>
+</blockquote>
+<p><img src="assets/java/java_report/summary-2.png" alt="总览"></p>
+<ul>
+<li>工作年限<blockquote>
+<p>大部分在5-20之间</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="assets/java/java_report/years-of-experience.png" alt="v"></p>
+<ul>
+<li>项目类型<blockquote>
+<p>67%是全栈</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="assets/java/java_report/application-type-breakdown.png" alt="项目类型"></p>
+<ul>
+<li><p>微服务<br><img src="assets/java/java_report/microservices-plans-and-results.png" alt="微服务"></p>
+</li>
+<li><p>JVM语言</p>
+</li>
+</ul>
+<p><img src="assets/java/java_report/jvm-languages-v1.jpg" alt="JVM语言"></p>
+<ul>
+<li>Java版本</li>
+</ul>
+<p><img src="assets/java/java_report/java-version-breakdown.png" alt="Java版本"></p>
+<ul>
+<li>Java EE版本</li>
+</ul>
+<p><img src="assets/java/java_report/java-ee-breakdown.png" alt="Java EE版本"></p>
+<ul>
+<li>IDE</li>
+</ul>
+<p><img src="assets/java/java_report/ide.png" alt="IDE"></p>
+<ul>
+<li>构建工具</li>
+</ul>
+<p><img src="assets/java/java_report/build-tools.png" alt="构建工具"></p>
+<ul>
+<li>应用服务器<blockquote>
+<p>蓝色：生产环境，黄色：开发环境</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="assets/java/java_report/app-servers.png" alt="应用服务器"></p>
+<ul>
+<li>数据库</li>
+</ul>
+<p><img src="assets/java/java_report/databases.png" alt="数据库"></p>
+<ul>
+<li><p>总结</p>
+<blockquote>
+<p>2040 名开发者参与调查；<br>做全栈Web项目的开发者，平均大约有 10 - 12 年的工作经验；<br>63% 的在大企业或中型工作就职；<br>74% 的自认为高于业界平均水平；<br>34% 采用了微服务架构；<br>66% 并没有采用微服务，其中仅有 12% 的在未来有计划试试；<br>Java 8 是主流，62% 的参与者已经在生产环境用上了；<br>Java EE 7 ， 31% 的参与者已经在用新版本了；<br>42% 的根本不用 Java EE；<br>46% 的在用 IntelliJ IDEA，已超过了 Eclipse 的 41%；<br>68% 的在用 Maven ，Gradle 只有 16%.<br>Tomcat 是最受欢迎的应用服务器，高达 42%；<br>39% 的参与者在用 Oracle DB  ，稍微比 MySQL 的 38% 高了一点；<br>MongoDB 在最受欢迎的 NoSQL DB ，比例是 15% ；<br>Spring 依旧主宰着 Web 框架市场， Spring MVC 和 Spring Boot 的比例是 43% 和 29%；<br>Jenkins 主宰着 CI Server 市场，比例是 60% ；<br>Git 有 68% 份额，而 SVN 仅有 23%；<br>New Relic 在 APMs 有着 11% 份额；<br>32% 的参与者在用 Docker ，但 54% 的根本没用虚拟化环境；<br>71% 的参与者宣称自己是 Agile 的；  </p>
+</blockquote>
+</li>
+<li><p>过去4年变化</p>
+<blockquote>
+<p>Eclipse 的份额持续下降，而 IntelliJ 却稳步持续上升，已经在使用率超越了 Eclipse；<br>Maven 依旧保持着绝对的领先优势；<br>Gradle 增长缓慢，暂时还不足以挑战 Maven；<br>Spring 主宰着 Web 框架市场，从 2012 年到 2016 年持续增长中，特别是 Spring Boot 可以称为剧增；<br>JSF 在缓慢下降。Stripes、Tapestry、Wicket 和 Play 1 看样子要退出历史舞台了；<br>Git 展示了强劲的增长，从 27% 到 68%。而 SVN 却从 55% 降到 23%；  </p>
+</blockquote>
+</li>
+<li><p>常用开发工具</p>
+<p><img src="assets/java/most-popular-java-frameworks-and-tools-2016.png" alt="popular java frameworks and tools"></p>
+</li>
+</ul>
+<h4 id="就业"><a href="#就业" class="headerlink" title="就业"></a>就业</h4><blockquote>
+<p>全文涉及的城市包括： 北京、上海、深圳、广州、杭州、成都、南京、武汉、西安、长沙、苏州 。<br>涉及的语言包括：Java、Python、PHP、C#、C++<br>数据来源：使用Python爬取的拉勾网的招聘信息（共计15059条招聘信息）</p>
+</blockquote>
+<p><img src="assets/java/offer-report/lang-rank.png" alt=""></p>
+<blockquote>
+<p>主流：Java、PHP、C++</p>
+</blockquote>
+<p><img src="assets/java/offer-report/lang-payment.png" alt=""></p>
+<blockquote>
+<p>数据：按照拉勾网上薪资区间最低的价格来进行统计展示<br>Python语言以11.9k的薪资领跑，最低的是C#的8.6k</p>
+</blockquote>
+<p><img src="assets/java/offer-report/lang-xueli.png" alt=""></p>
+<blockquote>
+<p>C++的招聘看重学历，大部分企业需要开发者有硕士及以上学历<br>PHP的招聘基本上不注重学历<br>对Java开发者的要求是本科学历即可   </p>
+</blockquote>
+<p><img src="assets/java/offer-report/lang-city.png" alt=""></p>
+<blockquote>
+<p>各城市的Java需求都很大<br>北上深三城市对C++的需求是相对较多的，这三个城市是C++开发者的最佳选择<br>北京对Python开发者需求也较大，其它城市需求量不是特大<br>C#在所有城市普遍需求不大<br>北上广深杭对PHP的需求极大仅次于Java的需求  </p>
+</blockquote>
+<p><img src="assets/java/offer-report/lang-city-payment.png" alt=""></p>
+<blockquote>
+<p>成都、南京、武汉、西安、长沙只要你是个程序员不管你用什么语言做开发，平均工资都是那么点6-9k，南京完完全全的几乎重叠。<br>因此，想安稳拿高薪啊：学Java去北上深杭吧！<br>长沙这个城市为什么C#开发者平均薪资最高啊？！对了，Python开发者千万别去长沙，最低平均薪资。  </p>
+</blockquote>
+<h3 id="大公司使用情况"><a href="#大公司使用情况" class="headerlink" title="大公司使用情况"></a>大公司使用情况</h3><ul>
+<li>阿里 占90%</li>
+<li>百度、腾讯，主流：C、C++</li>
+<li>华为</li>
+<li>Twitter 2012年开始从Ruby on Rails转向到Java+Scala</li>
+<li>Amazon、Google、eBay</li>
+</ul>
+<h3 id="A-Z"><a href="#A-Z" class="headerlink" title="A-Z"></a>A-Z</h3><ul>
+<li>A : <strong>AspectJ</strong>（AOP框架）</li>
+<li>B : <strong>Spring Boot</strong></li>
+<li>C : <strong>Clojure</strong>（运行在JVM上的动态语言）</li>
+<li>D : <strong>Dagger</strong>（Android平台的依赖注入框架）</li>
+<li>E : <strong>Ektorp</strong>（Ektorp is a Java persistence API that uses CouchDB as storage engine）</li>
+<li>F : <strong>Felix</strong>（Apache Felix is a community effort to implement the OSGi Framework and Service platform and other interesting OSGi-related technologies under the Apache license）</li>
+<li>G : <strong>Groovy &amp; Grails</strong>（Groovy是Java平台上设计的面向对象编程语言。 这门动态语言拥有类似Python、Ruby和Smalltalk中的一些特性，可以作为Java平台的脚本语言使用。Grails : Web application framework, Groovy version of Ruby on Rails, to use in Java development. ）</li>
+<li>H : <strong>Spring HATEOAS</strong>（Create REST representations that follow the HATEOAS principle from your Spring-based applications.）</li>
+<li>I : <strong>Ivy</strong>（Apache Ivy™ is a popular dependency manager focusing on flexibility and simplicity.）</li>
+<li>J : <strong>Jetty</strong>（Jetty provides a Web server and javax.servlet container, plus support for HTTP/2, WebSocket, OSGi, JMX, JNDI, JAAS and many other integrations.）</li>
+<li>K : <strong>Kotlin</strong>（）</li>
+<li>L : <strong>Lucene</strong>（Apache Lucene and Solr are distributed under a commercially friendly Apache Software license）</li>
+<li>M : <strong>Morphia</strong>（The Java Object Document Mapper for MongoDB）</li>
+<li>N : <strong>Nashorn</strong>（Nashorn is a JavaScript engine developed in the Java programming language by Oracle.）</li>
+<li>O : <strong>OpenXava</strong>（OpenXava is an AJAX Java Framework for Rapid Development of Enterprise Web Applications.）</li>
+<li>P : <strong>Play</strong>（The High Velocity Web Framework for Java and Scala）</li>
+<li>Q : <strong>QPid</strong>（Apache Qpid makes messaging tools that speak AMQP and support many languages and platforms. ）</li>
+<li>R : <strong>Rave</strong>（Apache Rave moved into the Attic in January 2016. Apache Rave was a web and social mashup engine that aggregated and served web widgets. It was targeted as an engine for internet and intranet portals.）</li>
+<li>S : <strong>Stripes</strong>（Stripe provides a set of unified APIs and tools that instantly enable businesses to accept and manage online payments.）</li>
+<li>T : <strong>Thymeleaf</strong>（Thymeleaf is a modern server-side Java template engine for both web and standalone environments. ）</li>
+<li>U : <strong>UIMA</strong></li>
+<li>V : <strong>VertX</strong></li>
+<li>W : <strong>Wookie</strong></li>
+<li>X : <strong>Xindice</strong></li>
+<li>Y : <strong>YamlBeans</strong></li>
+<li>Z : <strong>Zookeeper</strong>（Apache ZooKeeper is an effort to develop and maintain an open-source server which enables highly reliable distributed coordination.）</li>
+</ul>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="https://zh.wikipedia.org/wiki/Java" target="_blank" rel="external">维基百科</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MjM5NzMyMjAwMA==&amp;mid=2651477527&amp;idx=1&amp;sn=bab8771112cd9e8ed3ce0e2170d5a469&amp;chksm=bd253a688a52b37efc14771d272008110b5e0375756f8f1178c19c7527025cce90eb52f2e449&amp;scene=0&amp;key=9289b6ec21f92a591bd7da4131f55d9ea14aa18499bfabb9f98a2521f682f6149656b9d2c6c71d96b16b11d5b86d07d3&amp;ascene=7&amp;uin=MjAyNjIyNTc0MQ%3D%3D&amp;devicetype=android-23&amp;version=26031933&amp;nettype=WIFI&amp;pass_ticket=dcoW4KAwlRHuuNy3CJAOPDyuYKwNMIotaQwWxXSsO3e9G1B5M5xEWSWQFrKSEARi&amp;wx_header=1" target="_blank" rel="external">2016 年 Java 工具和技术的调查：IDEA 已超过 Eclipse</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/23661167" target="_blank" rel="external">Java/Python/PHP/C#/C++各大城市招聘状况分析</a></li>
+<li><a href="http://redmonk.com/sogrady/category/programming-languages/" target="_blank" rel="external">语言流行度调查-redmonk</a></li>
+<li><a href="http://www.tiobe.com/tiobe-index/" target="_blank" rel="external">语言流行度调查-tiobe</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MjM5ODE0MTM1MA==&amp;mid=2650227512&amp;idx=1&amp;sn=073920372d8cbd032b070218dc3e195e&amp;scene=4" target="_blank" rel="external">极客学院｜《2016年中国程序员职业薪酬报告 》完整版发布</a></li>
+<li><a href="https://hadoopecosystemtable.github.io/" target="_blank" rel="external">The Hadoop Ecosystem Table</a></li>
+<li><a href="http://zeroturnaround.com/rebellabs/java-tools-and-technologies-landscape-2016/" target="_blank" rel="external">Java Tools and Technologies Landscape Report 2016</a></li>
+<li><a href="https://github.com/mfornos/awesome-microservices" target="_blank" rel="external">Awesome Microservices</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/22/use-react-question-collection/" itemprop="url">
+                  React使用过程中问题汇总
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-22T10:21:15+08:00" content="2016-07-22">
+              2016-07-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/22/use-react-question-collection/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/22/use-react-question-collection/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h3><ol>
+<li>集合内容变了（增加、更新或删除），如何让视图重新刷新？</li>
+<li>嵌套和递归的视图如何处理（比如树形）？</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/13/css3-learning-three/" itemprop="url">
+                  CSS3进阶（三）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-13T22:23:57+08:00" content="2016-06-13">
+              2016-06-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/13/css3-learning-three/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/13/css3-learning-three/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="需要了解的内容"><a href="#需要了解的内容" class="headerlink" title="需要了解的内容"></a>需要了解的内容</h1><ul>
+<li>vw,vh,vmin,vmax,em,rem</li>
+<li>flex</li>
+<li>box-sizing</li>
+<li>transform</li>
+<li>transition</li>
+<li>animation</li>
+<li>gradient</li>
+</ul>
+<h3 id="3-box-sizing"><a href="#3-box-sizing" class="headerlink" title="3. box-sizing"></a>3. box-sizing</h3><h4 id="盒模型（box-model）"><a href="#盒模型（box-model）" class="headerlink" title="盒模型（box model）"></a>盒模型（box model）</h4><p>讲box-sizing之前，先了解一下css中重要的概念：<strong>盒模型</strong><br>盒模型就是元素的宽（width）、高（height）和内容（content）、外边距（margin）、内边距（padding）、边框（border）之间的计算关系。<br>主要分为两类：W3C标准模型和IE传统模型。</p>
+<ul>
+<li><p>W3C标准盒模型</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/*外盒尺寸计算（元素空间尺寸）*/</span><br><span class="line"> Element 空间高度 = content height + padding + border + margin</span><br><span class="line"> Element 空间宽度 = content width + padding + border + margin</span><br><span class="line"> /*内盒尺寸计算（元素大小）*/</span><br><span class="line"> Element Height = content height + padding + border （Height为内容高度）</span><br><span class="line"> Element Width = content width + padding + border （Width为内容宽度）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>IE传统模型（IE6以下）</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/*外盒尺寸计算（元素空间尺寸）*/</span><br><span class="line">Element空间高度 = content Height + margin (Height包含了元素内容宽度，边框宽度，内距宽度)</span><br><span class="line">Element空间宽度 = content Width + margin (Width包含了元素内容宽度、边框宽度、内距宽度)</span><br><span class="line">/*内盒尺寸计算（元素大小）*/</span><br><span class="line">Element Height = content Height(Height包含了元素内容宽度，边框宽度，内距宽度)</span><br><span class="line">Element Width = content Width(Width包含了元素内容宽度、边框宽度、内距宽度)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>对比上面的两个公式，可以发现：外盒尺寸=内盒尺寸+margin，而不同的地方就在：<strong>内盒尺寸</strong>的计算方式不同。<br>如果打开IE和chrome的调试窗口，观察盒子模型的计算就可以发现不同之处（以宽度示例）：IE下定义元素的宽度是包含了padding、border的宽度的，而chrome下是不包含的，这样如果定义了padding、border的话，会导致元素的实际宽度比定义的要宽。</p>
+<p>为了解决这个差异，css3就定义了box-sizing样式：<br><code>box-sizing ： content-box || border-box || inherit</code></p>
+<p><code>content-box</code>: 是默认值，即W3C标准模型，width=定义的元素width+padding+border<br><code>border-box</code>：IE传统模型，width=定义的元素width<br>看一张图片就很明显了，特别是在有padding、margin、border的情况下，元素的宽度差别还是挺大的：<br><img src="/uploads/box-sizing.png" alt="box-sizing" title="box sizing"></p>
+<h3 id="4-transform"><a href="#4-transform" class="headerlink" title="4. transform"></a>4. transform</h3><h4 id="2D-转换（2D-transform）"><a href="#2D-转换（2D-transform）" class="headerlink" title="2D 转换（2D transform）"></a>2D 转换（2D transform）</h4><h4 id="3D-转换（3D-transform）"><a href="#3D-转换（3D-transform）" class="headerlink" title="3D 转换（3D transform）"></a>3D 转换（3D transform）</h4><h3 id="5-transition"><a href="#5-transition" class="headerlink" title="5. transition"></a>5. transition</h3><h3 id="6-animation"><a href="#6-animation" class="headerlink" title="6. animation"></a>6. animation</h3>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/05/reactjs-guides/" itemprop="url">
                   ReactJS使用入门
                 </a>
@@ -295,7 +864,7 @@
         
           
             <p><img src="/uploads/reactjs.png" alt="React" title="reactjs"></p>
-<p>先来看一段代码，直观感受一下：<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> CommentBox = React.createClass(&#123;</span><br><span class="line">  render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"commentBox"</span>&gt;</span></span><br><span class="line">        Hello, world! I am a CommentBox.</span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">CommentBox</span> /&gt;</span>,</span><br><span class="line">  document.getElementById('content')</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure></p>
+<p>先来看一段代码，直观感受一下：<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> CommentBox = React.createClass(&#123;</span><br><span class="line">  render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className="commentBox"&gt;</span><br><span class="line">        Hello, world! I am a CommentBox.</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;CommentBox /&gt;,</span><br><span class="line">  document.getElementById('content')</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
 <p>JSX转义后的js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> CommentBox = React.createClass(&#123;displayName: <span class="string">'CommentBox'</span>,</span><br><span class="line">  render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      React.createElement(<span class="string">'div'</span>, &#123;className: <span class="string">"commentBox"</span>&#125;,</span><br><span class="line">        <span class="string">"Hello, world! I am a CommentBox."</span></span><br><span class="line">      )</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  React.createElement(CommentBox, <span class="literal">null</span>),</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'content'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
 <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>React 是一个 Facebook 和 Instagram 用来创建用户界面的 JavaScript 库。<br>React 的核心思想是：<strong>封装组件</strong>。<br>各个组件维护自己的状态和 UI，当状态变更，自动重新渲染整个组件。<br>基于这种方式的一个直观感受就是我们不再需要不厌其烦地来回查找某个 DOM 元素，然后操作 DOM 去更改 UI。<br>React 大体包含下面这些概念：</p>
 <ul>
@@ -512,6 +1081,7 @@
 <p>以<code>vw</code>为例，先给个公式：<br><code>vw = 1/100 * viewport</code></p>
 <p>这里的<code>viewport</code>指的视窗，也就是浏览器内的可视区域（不包含浏览器自己的状态栏、工具栏等）。<br>vw单位跟百分比很相似，不同的是vw的值对所有的元素都一样，与他们父元素或父元素的宽度无关。有点像rem单位那样总是相对于根元素。</p>
 <p><code>vh</code>的效果类似，就不再阐述。</p>
+<p><strong>特别注意：viewport单位会把滚动条宽度也包含在内</strong></p>
 <h4 id="vmin-vmax"><a href="#vmin-vmax" class="headerlink" title="vmin,vmax"></a>vmin,vmax</h4><p><code>vh</code>和<code>vm</code>总是与视口的高度和宽度有关，与之不同的，<code>vmin</code>和<code>vmax</code>是与这次宽度和高度的最大值或最小值有关，取决于哪个更大和更小。例如，如果浏览器设置为<code>1100px</code>宽、<code>700px</code>高，<code>1vmin</code>会是<code>7px</code>,<code>1vmax</code>为<code>11px</code>。然而，如果宽度设置为<code>800px</code>，高度设置为<code>1080px</code>，<code>1vmin</code>将会等于<code>8px</code>而<code>1vmax</code>将会是<code>10.8px</code>。</p>
 <p><code>vh</code>,<code>vw</code>的使用场景比较好理解，<code>vmin</code>,<code>wmax</code>到底什么时候使用呢？</p>
 <p>场景一：</p>
@@ -1440,7 +2010,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1457,7 +2027,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
